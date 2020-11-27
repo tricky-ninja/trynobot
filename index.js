@@ -1,7 +1,7 @@
 const fs = require('fs');
 const Discord = require('discord.js');
 //const { prefix, token } = require('./config.json');
-const prefix = '&';
+let prefix = '&';
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 
@@ -78,7 +78,7 @@ try {
 	command.execute(message, args);
 } catch (error) {
 	console.error(error);
-	message.reply('there was an error bro!');
+	message.reply(`there was an error \n Error: ${error.message}`);
 }
 });
 client.login(process.env.TOKEN);
