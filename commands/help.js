@@ -1,4 +1,4 @@
-const { prefix } = require('../config.json');
+//const { prefix } = require('../config.json');
 
 module.exports = {
 	name: 'help',
@@ -7,7 +7,7 @@ module.exports = {
 	aliases: ['commands'],
 	usage: '[command name]',
 	cooldown: 5,
-	execute(message, args) {
+	execute(message, args, prefix) {
 		const data = [];
 const { commands } = message.client;
 
