@@ -62,7 +62,23 @@ if (command.args && !args.length) {
 				return
 			}
 		}
+		if (command.log){
+					
+			if (!args.length) {
+				return message.channel.send(`You didn't provide any feedback, ${message.author}!`);
+			}
+			const nameEmbed = new Discord.MessageEmbed()
+	.setColor('RANDOM')
+	.setTitle(`${message.author.username} send a feedback`)
 	
+	.setDescription(`Username: ${message.author.username}\nId: ${message.author.id}\nServer: ${message.guild}\nFeedback: ${args.join(" ")}`);
+			dev.send(nameEmbed);
+			message.reply('Successfully sent your feedback to my developers').then(sentMessage => {
+				sentMessage.react('👍');
+			
+							})
+	
+}
 		const now = Date.now();
 		const timestamps = cooldowns.get(command.name);
 		const cooldownAmount = (command.cooldown || 3) * 1000;
