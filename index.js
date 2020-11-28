@@ -26,6 +26,7 @@ client.on('message', message => {
 const args = message.content.slice(prefix.length).trim().split(' ');
 const tuser = message.mentions.users.first();
 const commandName = args.shift().toLowerCase();
+const devonly = ['711074637689389127'];
 const command = client.commands.get(commandName)
 	|| client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 
@@ -54,6 +55,12 @@ if (command.args && !args.length) {
 		}
 		if (!cooldowns.has(command.name)) {
 			cooldowns.set(command.name, new Discord.Collection());
+		}
+		if (command.devonly){
+			if (!devonly.includes(message.author.id)) {
+				message.channel.send(`You are not a developer!`)
+				return
+			}
 		}
 	
 		const now = Date.now();
