@@ -11,8 +11,8 @@ module.exports={
         const Discord = require('discord.js');
         
         let auth=message.author
-        if (!args.length) {
-          return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
+        if (!message.mentions.users.size) {
+          return message.channel.send(`You didn't provide any mention anyone, ${message.author}!`);
       }
         const taggedUser = message.mentions.users.first();
         if (taggedUser.bot){

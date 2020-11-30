@@ -10,13 +10,10 @@ module.exports={
     execute(message, args) {
         const util = require('util');
         const Discord = require('discord.js');
-        if (!args.length) {
-            return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
+        if (!message.mentions.users.size) {
+            return message.channel.send(`You didn't provide any mention anyone, ${message.author}!`);
         }
-        const taggedUser = message.mentions.users.first();
-        if (taggedUser.bot){
-            return message.reply('Why are you loving the bots :thinking:')
-        }
+       
         const loveEmbed = new Discord.MessageEmbed()
             .setAuthor(`${message.author.username} is relieving ${taggedUser.username}`, message.author.displayAvatarURL())
             .setColor(16732321)

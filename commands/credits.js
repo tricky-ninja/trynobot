@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'credits',
-	aliases: ['dev', 'developers'],
+	aliases: ['developers'],
 	description: 'Display credits',
 	execute(message) {
         const Discord = require('discord.js');

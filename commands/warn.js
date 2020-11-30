@@ -11,8 +11,8 @@ module.exports={
         const util = require('util');
         const Discord = require('discord.js');
         if(message.member.hasPermission("ADMINISTRATOR")) {
-            if (!args.length) {
-                return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
+            if (!message.mentions.users.size) {
+                return message.channel.send(`You didn't provide any mention anyone, ${message.author}!`);
             }else{
                 const taggedUser = message.mentions.users.first();
             const nameEmbed = new Discord.MessageEmbed()
