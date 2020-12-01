@@ -168,6 +168,7 @@ if (command.args && !args.length) {
 		if (d < 0.26)	{
 			try {
 				command.execute(message, args);
+				message.suppressEmbeds(true)
 				message.channel.send("Checkout our music bot Wania\nInvite link: https://discord.com/oauth2/authorize?client_id=776393670965461002&permissions=37223488&scope=bot")
 			} catch (error) {
 				console.error(error);
