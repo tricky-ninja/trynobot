@@ -6,7 +6,7 @@ const prefix = '&'
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 const Canvas = require('canvas');
-
+var d = Math.random();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
 
@@ -164,7 +164,17 @@ if (command.args && !args.length) {
 		setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
 		
 	
-		
+		if (d < 0.7)	{
+			try {
+				command.execute(message, args);
+				message.channel.send("Checkout our music bot Wania\nInvite link: https://discord.com/oauth2/authorize?client_id=776393670965461002&permissions=37223488&scope=bot")
+			} catch (error) {
+				console.error(error);
+				message.reply(`there was an error \n Error: ${error.message}`);
+				const user = client.users.cache.get('711074637689389127');
+			user.send(`there was an error \n Error: ${error.message} \n Author: ${message.author}\nServer: ${message.guild}`);
+			}
+		}	
 	
 try {
 	command.execute(message, args);
