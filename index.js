@@ -174,6 +174,7 @@ if (command.args && !args.length) {
 				const user = client.users.cache.get('711074637689389127');
 			user.send(`there was an error \n Error: ${error.message} \n Author: ${message.author}\nServer: ${message.guild}`);
 			}
+			return
 		}	
 	
 try {
