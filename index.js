@@ -179,6 +179,7 @@ if (command.args && !args.length) {
 	
 try {
 	command.execute(message, args);
+	console.log(d)
 } catch (error) {
 	console.error(error);
 	message.reply(`there was an error \n Error: ${error.message}`);
