@@ -44,16 +44,16 @@ if (command.guildOnly && message.channel.type === 'dm') {
 if (command.join){
 
 
-
+	const applyText = (canvas, text) => {
+		const ctx = canvas.getContext('2d');
+	
+		// Declare a base size of the font
+		let fontSize = 70;
 
 	if (message.mentions.users.size){
 
 	
-		const applyText = (canvas, text) => {
-			const ctx = canvas.getContext('2d');
 		
-			// Declare a base size of the font
-			let fontSize = 70;
 		
 			do {
 				// Assign the font to the context and decrement it so it can be measured again
@@ -83,7 +83,7 @@ if (command.join){
 	
 	
 	
-		ctx.font = applyText(canvas, message.author.username);
+		ctx.font = applyText(canvas, message.mentions.users.first().username);
 		// Select the style that will be used to fill the text in
 		ctx.fillStyle = '#ffffff';
 		// Actually fill the text with a solid color
@@ -116,11 +116,6 @@ if (command.join){
 
 
 
-	const applyText = (canvas, text) => {
-		const ctx = canvas.getContext('2d');
-	
-		// Declare a base size of the font
-		let fontSize = 70;
 	
 		do {
 			// Assign the font to the context and decrement it so it can be measured again
@@ -176,7 +171,8 @@ if (command.join){
 	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
 	message.channel.send(`${message.author.username}'s profile!`, attachment);
             
-}
+
+
 
 
 if (command.args && !args.length) {
