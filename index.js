@@ -70,7 +70,7 @@ if (command.join){
 			// Return the result to use in the actual canvas
 			return ctx.font;
 		};
-		const canvas = Canvas.createCanvas(700, 257);
+		
 		// ctx (context) will be used to modify a lot of the canvas
 	
 		
