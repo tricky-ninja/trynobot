@@ -50,6 +50,12 @@ if (command.join){
 		// Declare a base size of the font
 		let fontSize = 70;
 
+		const canvas = Canvas.createCanvas(700, 257);
+	// ctx (context) will be used to modify a lot of the canvas
+
+	const ctx =  canvas.getContext('2d');
+	const background = await Canvas.loadImage('https://discordjs.guide/assets/img/2vsIPEP.3f295fd2.png')
+
 	if (message.mentions.users.size){
 
 	
@@ -67,8 +73,7 @@ if (command.join){
 		const canvas = Canvas.createCanvas(700, 257);
 		// ctx (context) will be used to modify a lot of the canvas
 	
-		const ctx =  canvas.getContext('2d');
-		const background = await Canvas.loadImage('https://discordjs.guide/assets/img/2vsIPEP.3f295fd2.png')
+		
 		// This uses the canvas dimensions to stretch the image onto the entire canvas
 		ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 		// Use helpful Attachment class structure to process the file for you
@@ -126,11 +131,7 @@ if (command.join){
 		// Return the result to use in the actual canvas
 		return ctx.font;
 	};
-	const canvas = Canvas.createCanvas(700, 257);
-	// ctx (context) will be used to modify a lot of the canvas
-
-	const ctx =  canvas.getContext('2d');
-	const background = await Canvas.loadImage('https://discordjs.guide/assets/img/2vsIPEP.3f295fd2.png')
+	
 	// This uses the canvas dimensions to stretch the image onto the entire canvas
 	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 	// Use helpful Attachment class structure to process the file for you
