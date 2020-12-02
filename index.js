@@ -165,12 +165,19 @@ if (command.args && !args.length) {
 		setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
 		
 	
-		if (d < 0.26)	{
+		if (d < 0.135)	{
 			try {
 				command.execute(message, args);
 				
-				message.channel.send("Checkout our music bot Wania\nInvite link: https://discord.com/oauth2/authorize?client_id=776393670965461002&permissions=37223488&scope=bot")
-				message.suppressEmbeds(true)
+				const nameEmbed = new Discord.MessageEmbed()
+            .setColor(16732321)
+            .setAuthor('Also invite our new music bot')
+            .addField('Invite me','[click here](https://discord.com/oauth2/authorize?client_id=776393670965461002&permissions=37223488&scope=bot)',true)
+            .addField('Join support server','[support server](https://discord.gg/rwBwkKcV5z)',true)
+            .setThumbnail('https://i.ibb.co/W6hK79j/mimo-logo.png');
+
+        message.channel.send(nameEmbed);
+				
 			} catch (error) {
 				console.error(error);
 				message.reply(`there was an error \n Error: ${error.message}`);
