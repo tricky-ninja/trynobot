@@ -184,7 +184,7 @@ if (command.args && !args.length) {
             .addField(`\nJoin suppport server`,'[support server](https://fcaebook-dupe.idkthename.repl.co/404.html)',true)
             .setThumbnail('https://cdn.discordapp.com/avatars/778527592353366018/82ea7e11cd4cd2c8d3be2acde326e659.png?size=128');
 
-				var choice = math.random();
+				var choice = Math.random();
 				if (choice > 0.5){
         message.channel.send(nameEmbed);
 					return
