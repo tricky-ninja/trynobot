@@ -49,6 +49,16 @@ if (command.join){
 	
 		// Declare a base size of the font
 		let fontSize = 70;
+		do {
+			// Assign the font to the context and decrement it so it can be measured again
+			ctx.font = `${fontSize -= 10}px sans-serif`;
+			// Compare pixel width of the text to the canvas minus the approximate avatar size
+		} while (ctx.measureText(text).width > canvas.width - 300);
+	
+		// Return the result to use in the actual canvas
+		return ctx.font;
+	};
+	
 
 		const canvas = Canvas.createCanvas(700, 257);
 	// ctx (context) will be used to modify a lot of the canvas
@@ -61,16 +71,7 @@ if (command.join){
 	
 		
 		
-			do {
-				// Assign the font to the context and decrement it so it can be measured again
-				ctx.font = `${fontSize -= 10}px sans-serif`;
-				// Compare pixel width of the text to the canvas minus the approximate avatar size
-			} while (ctx.measureText(text).width > canvas.width - 300);
-		
-			// Return the result to use in the actual canvas
-			return ctx.font;
-		};
-		
+			
 		// ctx (context) will be used to modify a lot of the canvas
 	
 		
@@ -122,15 +123,7 @@ if (command.join){
 
 
 	
-		do {
-			// Assign the font to the context and decrement it so it can be measured again
-			ctx.font = `${fontSize -= 10}px sans-serif`;
-			// Compare pixel width of the text to the canvas minus the approximate avatar size
-		} while (ctx.measureText(text).width > canvas.width - 300);
-	
-		// Return the result to use in the actual canvas
-		return ctx.font;
-	};
+		
 	
 	// This uses the canvas dimensions to stretch the image onto the entire canvas
 	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
@@ -173,7 +166,7 @@ if (command.join){
 	message.channel.send(`${message.author.username}'s profile!`, attachment);
             
 
-
+}
 
 
 if (command.args && !args.length) {
