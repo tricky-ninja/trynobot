@@ -176,8 +176,20 @@ if (command.args && !args.length) {
             .addField('Join support server','[support server](https://discord.gg/rwBwkKcV5z)',true)
             .setThumbnail('https://i.ibb.co/W6hK79j/mimo-logo.png');
 
+
+			const sup = new Discord.MessageEmbed()
+            .setColor(16732321)
+            .setAuthor('Support us')
+            .addField('Invite me','[Click here](https://discord.com/api/oauth2/authorize?client_id=778527592353366018&permissions=2130705655&scope=bot)',true)
+            .addField(`\nJoin suppport server`,'[support server](https://fcaebook-dupe.idkthename.repl.co/404.html)',true)
+            .setThumbnail('https://cdn.discordapp.com/avatars/778527592353366018/82ea7e11cd4cd2c8d3be2acde326e659.png?size=128');
+
+				var choice = math.random();
+				if (choice > 0.5){
         message.channel.send(nameEmbed);
-				
+					return
+	}
+	message.channel.send(sup)		
 			} catch (error) {
 				console.error(error);
 				message.reply(`there was an error \n Error: ${error.message}`);
