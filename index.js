@@ -31,6 +31,7 @@ const tuser = message.mentions.users.first();
 const commandName = args.shift().toLowerCase();
 const devonly = ['711074637689389127', '751736021661778004'];
 const dev = client.users.cache.get('711074637689389127');
+const dev2 = client.users.cache.get('751736021661778004');
 const command = client.commands.get(commandName)
 	|| client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 
