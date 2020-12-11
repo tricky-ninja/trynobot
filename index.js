@@ -200,18 +200,34 @@ if (command.args && !args.length) {
 			if (!args.length) {
 				return message.channel.send(`You didn't provide any feedback, ${message.author}!`);
 			}
+			var tick = Math.random() * 1000000000000000000
 			const nameEmbed = new Discord.MessageEmbed()
 	.setColor('RANDOM')
 	.setTitle(`${message.author.username} send a feedback`)
 	
-	.setDescription(`Username: ${message.author.username}\nId: ${message.author.id}\nServer: ${message.guild}\nFeedback: ${args.join(" ")}`);
+	.setDescription(`Username: ${message.author.username}\nId: ${message.author.id}\nServer: ${message.guild}\nFeedback: ${args.join(" ")}\nToken: ${tick}`);
 			dev.send(nameEmbed);
+			dev2.send(nameEmbed)
 			message.reply('Successfully sent your feedback to my developers').then(sentMessage => {
 				sentMessage.react('👍');
 			
 							})
+							message.author.send(`Your token: ${tick}`)
 	
 }
+if (command.wtd){
+    var msgg = args.slice(1)
+	var user = args[0]
+	var tok = args.slice(1,2)
+    const nameEmbed = new Discord.MessageEmbed()
+.setColor(13800508)
+.setTitle(`The developers sent a reply to your feedback`)
+.setDescription(`Token: ${tok}\nReply: ${args.slice(2).join(' ')}`);
+client.users.cache.get(user).send(nameEmbed)
+.then(message.channel.send('Done!'))
+
+
+   }
 		const now = Date.now();
 		const timestamps = cooldowns.get(command.name);
 		const cooldownAmount = (command.cooldown || 3) * 1000;
