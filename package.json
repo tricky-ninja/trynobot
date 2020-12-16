@@ -12,6 +12,6 @@
   "dependencies": {
     "canvas": "^2.6.1",
     "discord.js": "^12.4.1",
-    "luhv": "^1.0.0"
+    "luhv": "^1.1.1"
   }
 }
