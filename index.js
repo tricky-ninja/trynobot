@@ -262,8 +262,8 @@ client.users.cache.get(user).send(nameEmbed)
             .setColor(16732321)
             .setAuthor('Support us')
             .addField('Invite me','[Click here](https://discord.com/api/oauth2/authorize?client_id=778527592353366018&permissions=2130705655&scope=bot)',true)
-            .addField(`\nJoin suppport server`,'[support server](https://fcaebook-dupe.idkthename.repl.co/404.html)',true)
-            .setThumbnail('https://cdn.discordapp.com/avatars/778527592353366018/82ea7e11cd4cd2c8d3be2acde326e659.png?size=128');
+            .addField(`\nJoin suppport server`,'[support server](https://discord.gg/bst8vnH5s7)',true)
+            .setThumbnail('https://i.ibb.co/S0Rztgf/Tryno-Logo.png');
 
 				var choice = Math.random();
 				if (choice > 0.5){
