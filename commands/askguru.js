@@ -9,16 +9,18 @@ module.exports = {
 	execute(message, args) {
 		const Discord = require('discord.js');
 		const client = new Discord.Client();
-		var facts = ["Hell yes!", "That would be a big NO!", "Never", ":100:", "probably", "probably not", "How do i know I am not an astrologer you fool"];
-var fact = Math.floor(Math.random() * facts.length);
+		const luhv = require('luhv');
 if (!args.length){
 	message.reply("Pls provide an argument")
 }else{
-const nameEmbed = new Discord.MessageEmbed()
+	luhv.eightBall(result => {
+		const nameEmbed = new Discord.MessageEmbed()
 .setColor('RANDOM')
 .setTitle(`Ask guru`)
-.setDescription(`${message.author.username}: ${args.join(" ")}\nSadhguru: ${facts[fact]}`)
+.setDescription(`${message.author.username}: ${args.join(" ")}\nSadhguru: ${result}`)
 message.channel.send(nameEmbed)
+	});
+
 }	
 },
 };
