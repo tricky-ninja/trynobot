@@ -3,7 +3,7 @@ module.exports = {
 	name: 'truth',
 	aliases: ['t'],
 	description: 'Truth question for truth or dare',
-	cooldown: 5,
+	cooldown: 2,
 	execute(message) {
 		const Discord = require('discord.js');
 		const client = new Discord.Client();
