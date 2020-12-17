@@ -32,6 +32,7 @@ const commandName = args.shift().toLowerCase();
 const devonly = ['711074637689389127', '751736021661778004','705291126927523893'];
 const dev = client.users.cache.get('711074637689389127');
 const dev2 = client.users.cache.get('751736021661778004');
+const dev3 = client.users.cache.get('705291126927523893')
 const command = client.commands.get(commandName)
 	|| client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 
@@ -209,7 +210,7 @@ if (command.args && !args.length) {
 	.setDescription(`Username: ${message.author.username}\nId: ${message.author.id}\nServer: ${message.guild}\nFeedback: ${args.join(" ")}\nToken: ${tick}`);
 			dev.send(nameEmbed);
 			dev2.send(nameEmbed)
-			devonly[2].send(nameEmbed)
+			dev3.send(nameEmbed)
 			message.reply('Successfully sent your feedback to my developers').then(sentMessage => {
 				sentMessage.react('👍');
 			
