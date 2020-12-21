@@ -1,7 +1,7 @@
 
 module.exports = {
 	name: 'reply',
-	description: 'Forwards a message',
+	description: 'Reply to a feedback',
     cooldown: 0,
     devonly: true,
     wtd: true,

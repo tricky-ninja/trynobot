@@ -26,14 +26,16 @@ client.on('message', async message => {
 	d = Math.random();
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-const args = message.content.slice(prefix.length).trim().split(' ');
-const tuser = message.mentions.users.first();
-const commandName = args.shift().toLowerCase();
-const devonly = ['711074637689389127', '751736021661778004','705291126927523893','376662500692721666'];
-const dev = client.users.cache.get('711074637689389127');
-const dev2 = client.users.cache.get('751736021661778004');
-const dev3 = client.users.cache.get('705291126927523893');
-const dev4 = client.users.cache.get('376662500692721666')
+	const args = message.content.slice(prefix.length).trim().split(' ');
+	const tuser = message.mentions.users.first();
+	const commandName = args.shift().toLowerCase();
+	const devonly = ['711074637689389127', '751736021661778004','705291126927523893','376662500692721666','739502238032068659'];
+	const maindevs = ['711074637689389127', '751736021661778004']
+	const dev = client.users.cache.get('711074637689389127');
+	const dev2 = client.users.cache.get('751736021661778004');
+	const dev3 = client.users.cache.get('705291126927523893');
+	const dev4 = client.users.cache.get('376662500692721666');
+	const dev5 = client.users.cache.get('739502238032068659');
 const command = client.commands.get(commandName)
 	|| client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 
@@ -198,6 +200,12 @@ if (command.args && !args.length) {
 				return
 			}
 		}
+		if (command.maindevonly){
+			if (!maindevs.includes(message.author.id)){
+				message.channel.send(`Only main devs have the permision to do that`)
+				return
+			}
+		}
 		if (command.log){
 					
 			if (!args.length) {
@@ -213,6 +221,7 @@ if (command.args && !args.length) {
 			dev2.send(nameEmbed);
 			dev3.send(nameEmbed);
 			dev4.send(nameEmbed);
+			
 			message.reply('Successfully sent your feedback to my developers').then(sentMessage => {
 				sentMessage.react('👍');
 			
@@ -230,9 +239,29 @@ if (command.wtd){
 .setDescription(`Token: ${tok}\nReply: ${args.slice(2).join(' ')}`);
 client.users.cache.get(user).send(nameEmbed)
 .then(message.channel.send('Done!'))
-
-
-   }
+dev.send(`${message.author.username} replied to ${client.users.cache.get(user).username} with the token ${tok}\n Reply: ${args.slice(2).join(' ')}`)
+dev2.send(`${message.author.username} replied to ${client.users.cache.get(user).username} with the token ${tok}\n Reply: ${args.slice(2).join(' ')}`)
+dev3.send(`${message.author.username} replied to ${client.users.cache.get(user).username} with the token ${tok}\n Reply: ${args.slice(2).join(' ')}`)
+dev4.send(`${message.author.username} replied to ${client.users.cache.get(user).username} with the token ${tok}\n Reply: ${args.slice(2).join(' ')}`)
+dev5.send(`${message.author.username} replied to ${client.users.cache.get(user).username} with the token ${tok}\n Reply: ${args.slice(2).join(' ')}`)
+ 
+}
+if (command.awtd){
+	 msgg = args.slice(1)
+	 user = args[0]
+	 tok = args.slice(1,2)
+	const nameEmbedmsg = new Discord.MessageEmbed()
+.setColor(13800508)
+.setTitle(`The developers sent a reply to your feedback`)
+.setDescription(`Token: ${tok}\nReply: ${args.slice(2).join(' ')}`);
+client.users.cache.get(user).send(nameEmbedmsg)
+.then(message.channel.send('Private reply done!'))
+dev.send(`${message.author.username} replied to the ${client.users.cache.get(user)} with the token ${tok}\n Reply: ${msgg.join(" ")}`)
+dev2.send(`Token ${tok} of ${client.users.cache.get(user).username} has been closed by a dev`)
+dev3.send(`Token ${tok} of ${client.users.cache.get(user).username} has been closed by a dev`)
+dev4.send(`Token ${tok} of ${client.users.cache.get(user).username} has been closed by a dev`)
+dev5.send(`Token ${tok} of ${client.users.cache.get(user).username} has been closed by a dev`)
+}
 		const now = Date.now();
 		const timestamps = cooldowns.get(command.name);
 		const cooldownAmount = (command.cooldown || 3) * 1000;

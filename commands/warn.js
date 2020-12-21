@@ -19,10 +19,12 @@ module.exports={
             .setColor('RANDOM')
             .setTitle(`${taggedUser.username} is warned`)
             
-            .setDescription(`Reason: ${args.join(" ")}`);
+            .setDescription(`Reason: ${args.slice(1).join(" ")}`);
             
             message.channel.send(nameEmbed);
             message.author.send(`You warned ${taggedUser}!`)
+            taggedUser.send(nameEmbed)
+            taggedUser.send(`Server: ${message.guild.name}`)
             }
 }else {
     message.reply(`You dont have permission! Ask an admin to give you permison`)

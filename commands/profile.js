@@ -1,7 +1,7 @@
 
 module.exports = {
 	name: 'profile',
-	description: 'Ping!',
+	description: 'Displays your profile',
     cooldown: 5,
 	guildOnly: true,
 	join: true,
