@@ -256,7 +256,7 @@ if (command.awtd){
 .setDescription(`Token: ${tok}\nReply: ${args.slice(2).join(' ')}`);
 client.users.cache.get(user).send(nameEmbedmsg)
 .then(message.channel.send('Private reply done!'))
-dev.send(`${message.author.username} replied to the ${client.users.cache.get(user)} with the token ${tok}\n Reply: ${msgg.join(" ")}`)
+dev.send(`${message.author.username} replied to the ${client.users.cache.get(user)} with the token ${tok}\n Reply: ${args.slice(2).join(" ")}`)
 dev2.send(`Token ${tok} of ${client.users.cache.get(user).username} has been closed by a dev`)
 dev3.send(`Token ${tok} of ${client.users.cache.get(user).username} has been closed by a dev`)
 dev4.send(`Token ${tok} of ${client.users.cache.get(user).username} has been closed by a dev`)
