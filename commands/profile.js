@@ -7,7 +7,7 @@ module.exports = {
     cooldown: 5,
 	guildOnly: true,
 	join: true,
-	execute(message) {
+	async execute(message) {
 		
 		const applyText = (canvas, text) => {
 			const ctx = canvas.getContext('2d');
