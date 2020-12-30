@@ -192,7 +192,7 @@ dev5.send(`Token ${tok} of ${client.users.cache.get(user).username} has been clo
 		}	
 	
 try {
-	command.execute(message, args, client);
+	command.execute(message, args, client, Discord);
 	console.log(d)
 } catch (error) {
 	console.error(error);
