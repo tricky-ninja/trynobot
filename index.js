@@ -19,7 +19,6 @@ const cooldowns = new Discord.Collection()
 
 client.once('ready', () => {
 	client.user.setActivity('&help', {type: 'LISTENING' });
-	console.log(`I am in: ${client.guilds.size} servers`)
 	console.log('Ready!');
 });
 client.on('message', async message => {
