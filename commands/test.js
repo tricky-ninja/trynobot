@@ -6,6 +6,6 @@ module.exports={
     devonly: true,
     execute(message) {
 // inside a command, event listener, etc.
-message.author.send(`I am in: ${client.guilds.cache.size} servers`)
+message.author.send(`I am in: ${client.guilds.cache.length} servers`)
 }
 }
