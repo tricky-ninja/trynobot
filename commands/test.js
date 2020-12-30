@@ -2,6 +2,7 @@
 module.exports={
     name: 'test',
     description: 'makes you test',
+    devonly: true,
     execute(message, args, client, Discord) {
 // inside a command, event listener, etc.
 message.channel.send("wrking")
