@@ -102,6 +102,7 @@ if (command.args && !args.length) {
 			dev4.send(nameEmbed);
 			dev5.send(nameEmbed);
 			dev5.send(nameEmbed);
+			dev6.send(nameEmbed);
 			message.reply('Successfully sent your feedback to my developers').then(sentMessage => {
 				sentMessage.react('👍');
 			
