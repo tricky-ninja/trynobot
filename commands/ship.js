@@ -14,10 +14,10 @@ module.exports = {
         }
       else if (!message.mentions.users.size){
          
-            if (args[1] == null){
-                yname = message.author.username
-                pname = args[0]
-            }
+        if (args[1] == null){
+            yname = message.author.username
+            pname = args[0]
+        }
             else if (args[1] != ''){
                 yname = args[0]
                 pname = args[1]
@@ -38,8 +38,8 @@ module.exports = {
         }
         if (args.length){
             
-            luhv.loveCount(args[0], args[1], (love) => {
-                message.channel.send(`You both have: ${love}% love`);
+            luhv.loveCount(yname, pname, (love) => {
+                message.channel.send(`${yname} and ${pname} have: ${love}% love`);
             }, (err) => {
                 message.channel.send(err);
             });	

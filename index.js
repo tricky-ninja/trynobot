@@ -6,6 +6,7 @@ const prefix = '&'
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 const Canvas = require('canvas');
+const images = require('./files/images')
 var d = Math.random();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
@@ -197,7 +198,7 @@ dev6.send(`Token ${tok} of ${client.users.cache.get(user).username} has been clo
 		}	
 	
 try {
-	command.execute(message, args, client, Discord);
+	command.execute(message, args, client, Discord, images);
 	console.log(d)
 } catch (error) {
 	console.error(error);
