@@ -102,7 +102,6 @@ if (command.args && !args.length) {
 			dev3.send(nameEmbed);
 			dev4.send(nameEmbed);
 			dev5.send(nameEmbed);
-			dev5.send(nameEmbed);
 			dev6.send(nameEmbed);
 			message.reply('Successfully sent your feedback to my developers').then(sentMessage => {
 				sentMessage.react('👍');
@@ -128,6 +127,14 @@ dev4.send(`${message.author.username} replied to ${client.users.cache.get(user).
 dev5.send(`${message.author.username} replied to ${client.users.cache.get(user).username} with the token ${tok}\n Reply: ${args.slice(2).join(' ')}`)
 dev6.send(`${message.author.username} replied to ${client.users.cache.get(user).username} with the token ${tok}\n Reply: ${args.slice(2).join(' ')}`)
  
+}
+if (command.devc){
+			dev.send(`${message.author.username}: ${args.join(" ")}`);
+			dev2.send(`${message.author.username}: ${args.join(" ")}`);
+			dev3.send(`${message.author.username}: ${args.join(" ")}`);
+			dev4.send(`${message.author.username}: ${args.join(" ")}`);
+			dev5.send(`${message.author.username}: ${args.join(" ")}`);
+			dev6.send(`${message.author.username}: ${args.join(" ")}`);
 }
 if (command.awtd){
 	 msgg = args.slice(1)
