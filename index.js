@@ -226,7 +226,7 @@ dev6.send(`Token ${tok} of ${client.users.cache.get(user).username} has been clo
 		}	
 	
 		try {
-			command.execute(message, args, Discord, client, images, pre, guildPrefix, prefix, prefixes, Keyv);
+			command.execute(message, args, client, images, pre, guildPrefix, prefix, prefixes, Keyv);
 			console.log(d)
 		} catch (error) {
 			console.error(error);
