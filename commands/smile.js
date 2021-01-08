@@ -1,5 +1,6 @@
 module.exports={
     name: 'smile',
+    aliases: ['laugh', 'happy'],
     description: 'makes you smile',
     guildOnly: true,
 
