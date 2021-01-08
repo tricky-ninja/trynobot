@@ -5,6 +5,8 @@ const { setPriority } = require('os');
 const prefix = '&'
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
+const Keyv = require('keyv');
+const prefixes = new Keyv('sqlite://C:/Users/HC/Desktop/discord-bot/SreyasBot/database.sqlite');
 const Canvas = require('canvas');
 const images = require('./files/images')
 var d = Math.random();
@@ -23,10 +25,29 @@ client.once('ready', () => {
 	console.log('Ready!');
 });
 client.on('message', async message => {
+	if (message.author.bot) return;
 	d = Math.random();
-    if (!message.content.startsWith(prefix) || message.author.bot) return;
+	let args;
+	let pre;
+	let guildPrefix;
+	d = Math.random();
+	if (message.guild) {
+		if (message.content.startsWith(prefix)){
+			pre = prefix;
+			}else {
+				// check the guild-level prefix
+				 guildPrefix = await prefixes.get(message.guild.id);
+				if (message.content.startsWith(guildPrefix)) pre = guildPrefix;
+			}
+			if (!pre) return;
+				args = message.content.slice(prefix.length).trim().split(/\s+/);
+		} else {
+			// handle DMs
+			const slice = message.content.startsWith(prefix) ? prefix.length : 0;
+			args = message.content.slice(slice).split(/\s+/);
+		}
+	
 
-	const args = message.content.slice(prefix.length).trim().split(' ');
 	const tuser = message.mentions.users.first();
 	const commandName = args.shift().toLowerCase();
 	const devonly = ['711074637689389127', '751736021661778004','705291126927523893','376662500692721666','739502238032068659','752047863672078337'];
@@ -204,14 +225,15 @@ dev6.send(`Token ${tok} of ${client.users.cache.get(user).username} has been clo
 			return
 		}	
 	
-try {
-	command.execute(message, args, client, Discord, images);
-	console.log(d)
-} catch (error) {
-	console.error(error);
-	message.reply(`there was an error \n Error: ${error.message}`);
-	const user = client.users.cache.get('711074637689389127');
-user.send(`there was an error \n Error: ${error.message} \n Author: ${message.author}\nServer: ${message.guild}`);
-}
+		try {
+			command.execute(message, args, Discord, client, images, pre, guildPrefix, prefix, prefixes, Keyv);
+			console.log(d)
+		} catch (error) {
+			console.error(error);
+			message.channel.send(`\`\`\`${error}\`\`\``);
+			const user = client.users.cache.get('711074637689389127');
+		user.send(`\`\`\`there was an error \n Error: ${error.message} \n Author: ${message.author.username}\nServer: ${message.guild}\`\`\``);
+		user.send(`\`\`\`${error}\`\`\``)
+		}
 });
 client.login(process.env.TOKEN);
