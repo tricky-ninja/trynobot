@@ -1,3 +1,4 @@
+const Discord = require('discord.js');
 module.exports={
     name: 'hug',
     description: 'hugs a user',
@@ -7,7 +8,7 @@ module.exports={
 
 	
 
-    execute(message, args, client, Discord, images) {
+    execute(message, args, client) {
         const util = require('util');
         if (!message.mentions.users.size) {
             return message.channel.send(`You didn't provide any mention anyone, ${message.author}!`);
