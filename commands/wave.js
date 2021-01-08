@@ -19,7 +19,7 @@ module.exports={
     "https://media.tenor.com/images/b56d184f2309f8e1f256205131a0f2e1/tenor.gif", "https://media.tenor.com/images/a7fda223af704afd4d68929f06009d0d/tenor.gif",
     "https://media.tenor.com/images/e59de399e44d39ff55addf8d3a51da3a/tenor.gif", "https://media.tenor.com/images/fe3e2d08c49445ca807935eba60e5627/tenor.gif"
     ]
-    var wave = images.wave[Math.floor(Math.random() * waves.length)]
+    var wave = waves[Math.floor(Math.random() * waves.length)]
     
     var waveMsg = ["says hi to", "is waving at", "says hello to"]
 

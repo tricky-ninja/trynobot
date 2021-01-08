@@ -20,7 +20,7 @@ module.exports={
         "https://media.tenor.com/images/a9730f44f28d959abb4c5b31edc77de8/tenor.gif","https://media.tenor.com/images/1ca37ea5d3ec66ea08893d8679c04ae1/tenor.gif",
         "https://media.tenor.com/images/1e058dc8d0ccd337b6d26cbab43b6e30/tenor.gif"
     ]
-    var wave = images.hug[Math.floor(Math.random() * hugs.length)]
+    var wave = hugs[Math.floor(Math.random() * hugs.length)]
     
     var waveMsg = ["hugs", "is embaracing", "is hugging"]
 
