@@ -12,6 +12,7 @@
   "dependencies": {
     "@keyv/sqlite": "^2.0.2",
     "canvas": "^2.6.1",
+    "discord-image-generation": "^1.4.7",
     "discord.js": "^12.4.1",
     "keyv": "^4.0.3",
     "luhv": "^1.2.0",
