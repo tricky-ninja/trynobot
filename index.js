@@ -22,7 +22,7 @@ const cooldowns = new Discord.Collection()
 
 client.once('ready', () => {
 	client.user.setActivity('&help', {type: 'LISTENING' });
-	console.log('Ready!');
+	console.log('Ready!!');
 });
 client.on('message', async message => {
 	if (message.author.bot) return;
