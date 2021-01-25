@@ -1,14 +1,14 @@
 {
-  "name": "sreyasbot",
+  "name": "tryno",
   "version": "1.0.0",
-  "description": "playing @",
+  "description": "discord.js bot",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
-  "author": "Sreyas",
-  "license": "ISC",
+  "author": "Xhackers7",
+  "license": "CC BY-NC-ND",
   "dependencies": {
     "@keyv/sqlite": "^2.0.2",
     "canvas": "^2.6.1",
