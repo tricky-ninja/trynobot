@@ -28,7 +28,18 @@ for (const file of commandFiles) {
 const cooldowns = new Discord.Collection()
 
 client.once('ready', () => {
-	client.user.setActivity('&help', {type: 'LISTENING' });
+        const statusList = [
+        'Wishing you a Happy republic day',
+        '&help',
+        'Love India'
+          ]
+      
+      setInterval(function () {
+          let changingStatus = statusList[Math.floor(Math.random() * statusList.length)];
+          client.user.setActivity(changingStatus, {type: 'LISTENING' });
+      
+        }, 10000)
+	
 	console.log('Ready!!');
 });
 client.on('message', async message => {
