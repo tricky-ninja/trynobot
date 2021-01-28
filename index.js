@@ -36,10 +36,10 @@ client.once('ready', () => {
       
       setInterval(function () {
           let changingStatus = statusList[Math.floor(Math.random() * statusList.length)];
-          client.user.setActivity(changingStatus, {type: 'LISTENING' });
+          
       
         }, 10000)
-	
+		client.user.setActivity('&help', {type: 'LISTENING' });
 	console.log('Ready!!');
 });
 client.on('message', async message => {
