@@ -11,6 +11,7 @@
   "license": "CC BY-NC-ND",
   "dependencies": {
     "@keyv/sqlite": "^2.0.2",
+    "better-tord": "^1.2.1",
     "canvas": "^2.6.1",
     "discord-emotes": "^1.5.1",
     "discord-image-generation": "^1.4.7",
