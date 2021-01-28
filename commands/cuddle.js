@@ -1,8 +1,8 @@
 module.exports={
-    name: 'kiss',
-    description: 'kisses a given user',
+    name: 'cuddle',
+    description: 'hugs a given user',
     args: true,
-    aliases: ['kissss'],
+    aliases: ['huddle','snuggle'],
     usage: '<@username>',
     guildOnly: true,
 
@@ -15,14 +15,14 @@ module.exports={
             return message.channel.send(`You didn't mention anyone, ${message.author}!`);
         }
         
-        var hugMsg = ["is kissing", "kisses","kissed"]
-        const { kiss } = require("discord-emotes");
+        var hugMsg = ["are cuddling", "are huddling","are snuggling"]
+        const { cuddle } = require("discord-emotes");
 
 
-        kiss().then(
+        cuddle().then(
             function(value){
                 const embed = new Discord.MessageEmbed()
-                .setTitle(`${message.author.username} ${hugMsg[Math.floor(Math.random() * hugMsg.length)]} ${message.mentions.users.first().username}`)
+                .setTitle(`${message.author.username} and ${message.mentions.users.first().username} ${hugMsg[Math.floor(Math.random() * hugMsg.length)]}`)
                 .setImage(value)
                 message.channel.send(embed);
             },
