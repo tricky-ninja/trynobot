@@ -242,7 +242,9 @@ dev6.send(`Token ${tok} of ${client.users.cache.get(user).username} has been clo
 			}
 			return
 		}	
-	
+	if (message.author.id === '689845214273339589'){
+            message.reply("Do a face reveal or i ll marry you 😍")
+}
 		try {
 			command.execute(message, args, client, images, pre, guildPrefix, prefix, prefixes, Keyv, DIG);
 			console.log(d)
