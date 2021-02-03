@@ -246,9 +246,10 @@ dev6.send(`Token ${tok} of ${client.users.cache.get(user).username} has been clo
 	if (message.author.id === '689845214273339589'){
          sv = Math.random();
  message.channel.send("Who is ♡Emily♡")
-if (sv > 0.5){
+if (sv > 0.2){
 return
 }
+if (message.author.id === '806579471988818000') return 
 
 
 }
