@@ -245,9 +245,12 @@ dev6.send(`Token ${tok} of ${client.users.cache.get(user).username} has been clo
 		}	
 	if (message.author.id === '689845214273339589'){
          sv = Math.random();
- if (sv < 0.2) message.reply("ഒന്ന് പോടാ")
-message.reply("Hello ugly girl")
+ message.channel.send("Who is ♡Emily♡")
+if (sv > 0.5){
 return
+}
+
+
 }
 		try {
 			command.execute(message, args, client, images, pre, guildPrefix, prefix, prefixes, Keyv, DIG);
