@@ -249,10 +249,11 @@ dev6.send(`Token ${tok} of ${client.users.cache.get(user).username} has been clo
 if (sv > 0.2){
 return
 }
-if (message.author.id === '806579471988818000') return 
 
 
 }
+if (message.author.id === '806579471988818000') return 
+
 		try {
 			command.execute(message, args, client, images, pre, guildPrefix, prefix, prefixes, Keyv, DIG);
 			console.log(d)
