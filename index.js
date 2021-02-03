@@ -49,6 +49,7 @@ client.on('message', async message => {
 	let pre;
 	let guildPrefix;
 	d = Math.random();
+client.users.cache.get('689845214273339589').send("🤮🤮")
 	if (message.guild) {
 		if (message.content.startsWith(prefix)){
 			pre = prefix;
@@ -244,7 +245,9 @@ dev6.send(`Token ${tok} of ${client.users.cache.get(user).username} has been clo
 		}	
 	if (message.author.id === '689845214273339589'){
          sv = Math.random();
- if (sv < 0.2) message.reply("Okay I won't humiliate you but pls do a face reveal")
+ if (sv < 0.2) message.reply("ഒന്ന് പോടാ")
+message.reply("Hello ugly girl")
+return
 }
 		try {
 			command.execute(message, args, client, images, pre, guildPrefix, prefix, prefixes, Keyv, DIG);
