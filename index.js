@@ -49,7 +49,6 @@ client.on('message', async message => {
 	let pre;
 	let guildPrefix;
 	d = Math.random();
-client.users.cache.get('711074637689389127').send("🤮🤮")
 	if (message.guild) {
 		if (message.content.startsWith(prefix)){
 			pre = prefix;
@@ -245,10 +244,7 @@ dev6.send(`Token ${tok} of ${client.users.cache.get(user).username} has been clo
 		}	
 	if (message.author.id === '689845214273339589'){
          sv = Math.random();
- message.channel.send("🤨🤨")
-if (sv > 0.2){
-return
-}
+ 
 
 
 }
