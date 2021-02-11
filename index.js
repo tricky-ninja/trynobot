@@ -244,8 +244,12 @@ dev6.send(`Token ${tok} of ${client.users.cache.get(user).username} has been clo
 		}	
 	if (message.author.id === '689845214273339589'){
          sv = Math.random();
- if (sv < 0.2) message.reply("Okay I won't humiliate you but pls do a face reveal")
+ 
+
+
 }
+if (message.author.id === '806579471988818000') return 
+
 		try {
 			command.execute(message, args, client, images, pre, guildPrefix, prefix, prefixes, Keyv, DIG);
 			console.log(d)
