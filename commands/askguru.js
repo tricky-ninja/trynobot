@@ -2,7 +2,7 @@ const { args } = require('./hug');
 
 module.exports = {
 	name: 'askguru',
-	aliases: ['ask', 'guru'],
+	aliases: ['ask', 'guru','8ball'],
     description: 'Answers to the meaning of life',
     usage: '<question(yes/no)>',
 	cooldown: 5,
@@ -14,11 +14,7 @@ if (!args.length){
 	message.reply("Pls provide an argument")
 }else{
 	luhv.eightBall(result => {
-		const nameEmbed = new Discord.MessageEmbed()
-.setColor('RANDOM')
-.setTitle(`Ask guru`)
-.setDescription(`${message.author.username}: ${args.join(" ")}\nSadhguru: ${result}`)
-message.channel.send(nameEmbed)
+message.channel.send(`**:8ball: ${result} **`)
 	});
 
 }	
