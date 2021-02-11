@@ -40,7 +40,13 @@ module.exports = {
         if (args.length){
             
 luhv.flames(yname, pname, (flames) => {
-    message.channel.send(`The relation between ${yname} and ${pname} is ${flames}`)
+    if (flames === 'friends') message.channel.send(`**:hugging: | ${pname} is ${yname}'s freind | :hugging:**`)
+    if (flames === 'enemy') message.channel.send(`**:imp: | ${pname} is ${yname}'s worst enemy | :imp:**`)
+    if (flames === 'lover') message.channel.send(`**:heartpulse: | ${pname} has a cursh on ${yname} | :heartpulse:**`)
+    if (flames === 'marriage') message.channel.send(`**:ring: | ${pname} will get Married to ${yname} | :ring:**`)
+    if (flames === 'affection') message.channel.send(`**:sparkling_heart: | ${pname} is attracted to ${yname} | :sparkling_heart:**`)
+    if (flames === 'sister') message.channel.send(`**Please ping the owner(Tricky Gamer
+        #7497) and take a screenshot of this miracle**`)
 }, (err) => {
     message.channel.send(err);
 });
