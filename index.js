@@ -39,7 +39,7 @@ client.once('ready', () => {
           
       
         }, 10000)
-		client.user.setActivity('&help', {type: 'LISTENING' });
+		client.user.setActivity('&help | **Tryno Bot**', {type: 'LISTENING' });
 	console.log('Ready!!');
 });
 client.on('message', async message => {
