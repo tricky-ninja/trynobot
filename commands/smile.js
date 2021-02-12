@@ -1,6 +1,6 @@
+const {emotecolor} = require('../style.json');
 module.exports={
     name: 'smile',
-    aliases: ['laugh', 'happy'],
     description: 'makes you smile',
     guildOnly: true,
 
@@ -15,7 +15,7 @@ module.exports={
        var smile = Math.floor(Math.random() * smiles.length)
         const loveEmbed = new Discord.MessageEmbed()
             .setAuthor(`${message.author.username} ${smileMsg[smileN]}`)
-            .setColor('RANDOM')
+            .setColor(emotecolor)
             .setImage(smiles[smile]);
            
             message.channel.send(loveEmbed); 

@@ -1,3 +1,4 @@
+const {emotecolor} = require('../style.json');
 module.exports={
     name: 'scream',
     description: 'makes you scream',
@@ -14,7 +15,7 @@ module.exports={
        var scream = Math.floor(Math.random() * screams.length)
         const loveEmbed = new Discord.MessageEmbed()
             .setAuthor(`${message.author.username} ${screamMsg[screamN]}`)
-            .setColor('RANDOM')
+            .setColor(emotecolor)
             .setImage(screams[scream]);
            
             message.channel.send(loveEmbed); 

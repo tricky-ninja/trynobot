@@ -1,3 +1,4 @@
+const {emotecolor} = require('../style.json');
 module.exports={
     name: 'kill',
     description: 'kills a user',
@@ -25,7 +26,7 @@ module.exports={
 
         const loveEmbed = new Discord.MessageEmbed()
             .setAuthor(`${message.author.username} killed ${taggedUser.username} ${killMsg[killN]}`)
-            .setColor(16732321)
+            .setColor(emotecolor)
             .setImage(kills[kill]);
            
             message.channel.send(loveEmbed); 

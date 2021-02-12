@@ -1,3 +1,4 @@
+const {emotecolor} = require('../style.json');
 module.exports={
     name: 'love',
     aliases: ['l', 'heart'],
@@ -25,7 +26,7 @@ module.exports={
     var loveN = Math.floor(Math.random() * loveMsg.length)
         const loveEmbed = new Discord.MessageEmbed()
             .setAuthor(`${message.author.username} ${loveMsg[loveN]} ${taggedUser.username}`)
-            .setColor(16732321)
+            .setColor(emotecolor)
             .setImage(loves[love]);
            
             message.channel.send(loveEmbed); 

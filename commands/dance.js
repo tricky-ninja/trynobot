@@ -1,3 +1,4 @@
+const {emotecolor} = require('../style.json');
 module.exports = {
     name: 'dance',
     description: 'Makes you dance',
@@ -9,7 +10,7 @@ module.exports = {
             let danceMsg = ["loves to dance", "is dancing", "is rocking", "is shaking some booty"]
             let danceN = Math.floor(Math.random() * danceMsg.length)
         const nameEmbed = new Discord.MessageEmbed()
-.setColor('RNADOM')
+.setColor(emotecolor)
 .setTitle(`${message.author.username} ${danceMsg[danceN]}`)
 .setImage(dances[dance]);
         message.channel.send(nameEmbed)

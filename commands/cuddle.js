@@ -1,3 +1,4 @@
+const {emotecolor} = require('../style.json');
 module.exports={
     name: 'cuddle',
     description: 'hugs a given user',
@@ -15,7 +16,7 @@ module.exports={
             return message.channel.send(`You didn't mention anyone, ${message.author}!`);
         }
         
-        var hugMsg = ["are cuddling", "are huddling","are snuggling"]
+        var hugMsg = ["are cuddling, you guys look cute", "are huddling","are snuggling"]
         const { cuddle } = require("discord-emotes");
 
 
@@ -24,6 +25,7 @@ module.exports={
                 const embed = new Discord.MessageEmbed()
                 .setTitle(`${message.author.username} and ${message.mentions.users.first().username} ${hugMsg[Math.floor(Math.random() * hugMsg.length)]}`)
                 .setImage(value)
+                .setColor(emotecolor)
                 message.channel.send(embed);
             },
         function(error){console.log(error)} 

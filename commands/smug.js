@@ -1,3 +1,4 @@
+const {emotecolor} = require('../style.json');
 module.exports={
     name: 'smug',
     description: 'Smugs a given user',
@@ -20,6 +21,7 @@ module.exports={
                 const embed = new Discord.MessageEmbed()
                 .setTitle(`${message.author.username} ${hugMsg[Math.floor(Math.random() * hugMsg.length)]}`)
                 .setImage(value)
+                .setColor(emotecolor)
                 message.channel.send(embed);
             },
         function(error){console.log(error)} 

@@ -1,3 +1,4 @@
+const {emotecolor} = require('../style.json');
 module.exports={
     name: 'wipe',
     description: 'relievs a given user',
@@ -22,7 +23,7 @@ module.exports={
 
         const loveEmbed = new Discord.MessageEmbed()
             .setAuthor(`${message.author.username} ${wipeMsg[wipeN]} ${taggedUser.username}`, message.author.displayAvatarURL())
-            .setColor(16732321)
+            .setColor(emotecolor)
             .setImage(wipes[wipe]);
            
             message.channel.send(loveEmbed); 

@@ -1,3 +1,4 @@
+const {emotecolor} = require('../style.json');
 module.exports={
     name: 'propose',
     aliases: ['marry', 'ring'],
@@ -21,7 +22,7 @@ module.exports={
         let filter = m => m.author.id === taggedUser.id
         const loveEmbed = new Discord.MessageEmbed()
             .setAuthor(`${message.author.username} is proposing ${taggedUser.username}. Do you want to accept it ${taggedUser.username}`)
-            .setColor(16732321)
+            .setColor(emotecolor)
             .setImage("https://media.tenor.com/images/8098a5e15d6c857ace44a070e0a786a4/tenor.gif");
            
             message.channel.send(loveEmbed).then(() => {
