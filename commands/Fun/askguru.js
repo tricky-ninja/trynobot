@@ -1,4 +1,4 @@
-const { args } = require('./hug');
+
 
 module.exports = {
 	name: 'askguru',
