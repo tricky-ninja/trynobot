@@ -1,3 +1,4 @@
+const {emotecolor} = require('../../style.json');
 module.exports={
     name: 'bully',
     description: 'bullies a given user',
@@ -20,7 +21,7 @@ module.exports={
        const taggedUser = message.mentions.users.first();
         const loveEmbed = new Discord.MessageEmbed()
             .setAuthor(`${message.author.username} is bullying ${taggedUser.username}. ${bullyMsg[bullyN]}`)
-            .setColor('RANDOM')
+            .setColor(emotecolor)
             .setImage(bullys[bully]);
            
             message.channel.send(loveEmbed); 

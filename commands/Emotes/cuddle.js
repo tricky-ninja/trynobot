@@ -1,4 +1,4 @@
-const {emotecolor} = require('../style.json');
+const {emotecolor} = require('../../style.json');
 module.exports={
     name: 'cuddle',
     description: 'hugs a given user',
