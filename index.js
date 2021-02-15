@@ -16,14 +16,16 @@ const prefixes = new Keyv('sqlite://database.sqlite');
 const Canvas = require('canvas');
 const images = require('./files/images')
 var d = Math.random();
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 const DIG = require("discord-image-generation");
 let sv
+const commandFolders = fs.readdirSync('./commands');
 
-for (const file of commandFiles) {
-	const command = require(`./commands/${file}`);
-
-	client.commands.set(command.name, command);
+for (const folder of commandFolders) {
+	const commandFiles = fs.readdirSync(`./commands/${folder}`).filter(file => file.endsWith('.js'));
+	for (const file of commandFiles) {
+		const command = require(`./commands/${folder}/${file}`);
+		client.commands.set(command.name, command);
+	}
 }
 const cooldowns = new Discord.Collection()
 
@@ -209,39 +211,7 @@ dev6.send(`Token ${tok} of ${client.users.cache.get(user).username} has been clo
 		setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
 		
 	
-		if (d < 0.135)	{
-			try {
-				command.execute(message, args);
-				
-				const nameEmbed = new Discord.MessageEmbed()
-            .setColor(16732321)
-            .setAuthor('Also invite our new music bot')
-            .addField('Invite me','[click here](https://discord.com/oauth2/authorize?client_id=776393670965461002&permissions=37223488&scope=bot)',true)
-            .addField('Join support server','[support server](https://discord.gg/rwBwkKcV5z)',true)
-            .setThumbnail('https://i.ibb.co/W6hK79j/mimo-logo.png');
-
-
-			const sup = new Discord.MessageEmbed()
-            .setColor(16732321)
-            .setAuthor('Support us')
-            .addField('Invite me','[Click here](https://discord.com/api/oauth2/authorize?client_id=778527592353366018&permissions=2130705655&scope=bot)',true)
-            .addField(`\nJoin suppport server`,'[support server](https://discord.gg/bst8vnH5s7)',true)
-            .setThumbnail('https://i.ibb.co/S0Rztgf/Tryno-Logo.png');
-
-				var choice = Math.random();
-				if (choice > 0.5){
-        message.channel.send(nameEmbed);
-					return
-	}
-	message.channel.send(sup)		
-			} catch (error) {
-				console.error(error);
-				message.reply(`there was an error \n Error: ${error.message}`);
-				const user = client.users.cache.get('711074637689389127');
-			user.send(`there was an error \n Error: ${error.message} \n Author: ${message.author}\nServer: ${message.guild}`);
-			}
-			return
-		}	
+		
 	if (message.author.id === '689845214273339589'){
          sv = Math.random();
  
