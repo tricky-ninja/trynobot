@@ -34,11 +34,11 @@ module.exports = {
            
 			data.push(`\nYou can send \`${prefix}help [command name]\` to get info on a specific command!`);
 	
-			let helpEmbedd = new MessageEmbed()
+			let helpEmbed = new MessageEmbed()
       .setTitle(`${message.client.user.username} Help`)
       .setAuthor("List of all commands")
-      .setColor("#4AE60F")
-	  .addField(`${data}`)
+      .setColor(emotecolor)
+	  .addField(`${data.join(' ')}`)
         .setFooter('Use prefix & with all commands | Tryno©')
 	return message.channel.send(helpEmbedd);
 			
