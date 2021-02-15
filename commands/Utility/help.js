@@ -39,7 +39,7 @@ module.exports = {
       .setAuthor("List of all commands")
       .setColor("#4AE60F")
 	  .addField(`${data}`)
-        .setfooter('Use prefix & with all commands | Tryno©')
+        .setFooter('Use prefix & with all commands | Tryno©')
 	return message.channel.send(helpEmbed);
 			
 		}
