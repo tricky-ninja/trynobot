@@ -40,7 +40,7 @@ module.exports = {
       .setColor("#4AE60F")
 	  .addField(`${data}`)
         .setFooter('Use prefix & with all commands | Tryno©')
-	return message.channel.send(helpEmbed);
+	return message.channel.send(helpEmbedd);
 			
 		}
 
