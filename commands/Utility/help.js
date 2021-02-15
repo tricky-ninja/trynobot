@@ -38,7 +38,7 @@ module.exports = {
       .setTitle(`${message.client.user.username} Help`)
       .setAuthor("List of all commands")
       .setColor(emotecolor)
-	  .addField(`${data.join(' ')}`)
+	  .setDescription(`${data.join(' ')}`)
         .setFooter('Use prefix & with all commands | Tryno©')
 	return message.channel.send(helpEmbed);
 			
