@@ -40,7 +40,7 @@ module.exports = {
       .setColor(emotecolor)
 	  .addField(`${data.join(' ')}`)
         .setFooter('Use prefix & with all commands | Tryno©')
-	return message.channel.send(helpEmbedd);
+	return message.channel.send(helpEmbed);
 			
 		}
 
