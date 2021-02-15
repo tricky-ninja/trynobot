@@ -19,7 +19,7 @@ module.exports = {
             
             for (let i = 0; i < commandFolders.length; i++) {
                 const commandFiles = fs.readdirSync(`./commands/${commandFolders[i]}`).filter(file => file.endsWith('.js'))
-                data.push(`**>** ${commandFolders[i]}\n`)
+                data.push(`**>**  ${commandFolders[i]}\n\n`)
                 for (let j = 0; j < commandFiles.length; j++){
                     data.push(`\`${commandFiles[j].slice(0, -3)}\`, `)
                 }
