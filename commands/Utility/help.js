@@ -19,7 +19,7 @@ module.exports = {
             
             for (let i = 0; i < commandFolders.length; i++) {
                 const commandFiles = fs.readdirSync(`./commands/${commandFolders[i]}`).filter(file => file.endsWith('.js'))
-                data.push(`**=>** ${commandFolders[i]}\n`)
+                data.push(`**>** ${commandFolders[i]}\n`)
                 for (let j = 0; j < commandFiles.length; j++){
                     data.push(`\`${commandFiles[j].slice(0, -3)}\`, `)
                 }
@@ -41,7 +41,7 @@ module.exports = {
       .setTitle(`${message.client.user.username} Help`)
       .setAuthor("List of all commands")
       .setColor("#4AE60F")
-	  .addField(`**${data}**`)
+	  .addField(`${data}`)
 	return message.channel.send(helpEmbed);
 			
 		}
@@ -61,6 +61,6 @@ module.exports = {
 
 		data.push(`**Cooldown:** ${command.cooldown || 3} second(s)`);
 	
-		
+		message.channel.send(data)
 	},
 };
