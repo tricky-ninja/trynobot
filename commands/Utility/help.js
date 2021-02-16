@@ -16,7 +16,7 @@ module.exports = {
 		if (!args.length) {
 
 
-           
+           data.push("List of all commands\n\n")
             
             for (let i = 0; i < commandFolders.length; i++) {
                 const commandFiles = fs.readdirSync(`./commands/${commandFolders[i]}`).filter(file => file.endsWith('.js'))
@@ -36,7 +36,6 @@ module.exports = {
 	
 			let helpEmbed = new MessageEmbed()
       .setTitle(`${message.client.user.username} Help`)
-      .setDescription("List of all commands\n\n")
       .setColor(emotecolor)
 	  .setDescription(`${data.join(' ')}`)
         .setFooter('Use prefix & with all commands | Tryno©')
