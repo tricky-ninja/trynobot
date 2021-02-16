@@ -36,7 +36,7 @@ module.exports = {
 	
 			let helpEmbed = new MessageEmbed()
       .setTitle(`${message.client.user.username} Help`)
-      .setAuthor("List of all commands")
+      .setDescription("List of all commands\n\n")
       .setColor(emotecolor)
 	  .setDescription(`${data.join(' ')}`)
         .setFooter('Use prefix & with all commands | Tryno©')
