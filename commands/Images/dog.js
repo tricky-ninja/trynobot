@@ -16,7 +16,7 @@ module.exports={
         const { cat } = require("discord-emotes");
 
 
-        cat().then(
+        dog().then(
             function(value){
                 const embed = new Discord.MessageEmbed()
                 .setTitle(`Here is your puppy ${hugMsg[Math.floor(Math.random() * hugMsg.length)]}!`)
