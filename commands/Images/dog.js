@@ -13,7 +13,7 @@ module.exports={
 
         
         var hugMsg = ["Cute", "Aww","Adorable"]
-        const { cat } = require("discord-emotes");
+        const { dog } = require("discord-emotes");
 
 
         dog().then(
