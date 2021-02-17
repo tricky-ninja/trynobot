@@ -16,6 +16,7 @@
     "discord-emotes": "^1.5.1",
     "discord-image-generation": "^1.4.7",
     "discord.js": "^12.4.1",
+    "discord.js-tictactoe": "^1.0.2",
     "keyv": "^4.0.3",
     "luhv": "^1.3.1",
     "sqlite3": "^5.0.0"

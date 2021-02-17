@@ -17,6 +17,10 @@ const Canvas = require('canvas');
 const images = require('./files/images')
 var d = Math.random();
 const DIG = require("discord-image-generation");
+const ttt = require("discord.js-tictactoe")
+const embed_color = "#ff00aa"
+const start_cmd = "ttt"
+ttt.run(client, prefix, embed_color, start_cmd)
 let sv
 const commandFolders = fs.readdirSync('./commands');
 
