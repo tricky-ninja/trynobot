@@ -17,7 +17,8 @@ const Canvas = require('canvas');
 const images = require('./files/images')
 var d = Math.random();
 const DIG = require("discord-image-generation");
-
+const embed_color = "#ff00aa"
+    const start_cmd = "ttt"
 
 let sv
 const commandFolders = fs.readdirSync('./commands');
@@ -47,6 +48,7 @@ client.once('ready', () => {
 	console.log('Ready!!');
 });
 client.on('message', async message => {
+	ttt.run(client, prefix, embed_color, start_cmd)
 	if (message.author.bot) return;
 	d = Math.random();
 	let args;
