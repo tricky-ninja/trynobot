@@ -73,7 +73,7 @@ client.on('message', async message => {
 
 	const tuser = message.mentions.users.first();
 	const commandName = args.shift().toLowerCase();
-	const devonly = ['711074637689389127', '751736021661778004','705291126927523893','376662500692721666','739502238032068659','752047863672078337'];
+	const devonly = ['711074637689389127', '751736021661778004', '739502238032068659', '689845214273339589', '689418782934040592'];
 	const maindevs = ['711074637689389127', '751736021661778004']
 	const dev = client.users.cache.get('711074637689389127');
 	const dev2 = client.users.cache.get('751736021661778004');
