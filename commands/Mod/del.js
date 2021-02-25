@@ -15,7 +15,7 @@ module.exports = {
     } else if (amount < 2 || amount > 100) {
         return message.reply('you need to input a number between 2 and 100.');
     }else{
-        if (amount > 9){
+        if (amount > 51){
             let filter = m => m.author.id === message.guild.ownerID
         message.channel.send(`${message.guild.owner} ${message.author.username} wants to delete ${amount} messages.\n What do you say yes or no`).then(() => {
           message.channel.awaitMessages(filter, {
