@@ -12,12 +12,12 @@ module.exports = {
             const amount = parseInt(args[0]) + 1;
     if (isNaN(amount)) {
         return message.reply('that doesn\'t seem to be a valid number.');
-    } else if (amount <= 1 || amount > 101) {
+    } else if (amount <= 1 || amount > 100) {
         return message.reply('you need to input a number between 1 and 99.');
     }else{
         if (amount > 51){
             let filter = m => m.author.id === message.guild.ownerID
-        message.channel.send(`${message.guild.owner} ${message.author.username} wants to delete ${amount} messages.\n What do you say yes or no`).then(() => {
+        message.channel.send(`${message.guild.owner} ${message.author.username} wants to delete ${amount - 1} messages.\n What do you say yes or no`).then(() => {
           message.channel.awaitMessages(filter, {
               max: 1,
               time: 30000,
