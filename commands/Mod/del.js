@@ -12,7 +12,7 @@ module.exports = {
             const amount = parseInt(args[0]) + 1;
     if (isNaN(amount)) {
         return message.reply('that doesn\'t seem to be a valid number.');
-    } else if (amount < 2 || amount > 501) {
+    } else if (amount <= 1 || amount > 101) {
         return message.reply('you need to input a number between 1 and 500.');
     }else{
         if (amount > 51){
@@ -28,12 +28,12 @@ module.exports = {
               if (message.content.toUpperCase() == 'YES' || message.content.toUpperCase() == 'Y') {
                 message.channel.bulkDelete(amount, true).catch(err => {
                     console.error(err);
-                    message.channel.send('there was an error trying to clear messages in this channel!');
+                    message.channel.send(err);
                 });
                 const Discord = require('discord.js');
         const nameEmbed = new Discord.MessageEmbed()
 .setColor(6601338)
-.setTitle(`I deleted ${amount} messages for ${message.author.username}`)
+.setTitle(`I deleted ${amount - 1} messages for ${message.author.username}`)
 .setDescription(`Username: ${message.author.username}\nId: ${message.author.id}\nMessages: ${amount}`);
 message.channel.send(nameEmbed);
 
@@ -57,7 +57,7 @@ message.channel.send(nameEmbed);
         const Discord = require('discord.js');
         const nameEmbed = new Discord.MessageEmbed()
 .setColor(6601338)
-.setTitle(`I deleted ${amount} messages for ${message.author.username}`)
+.setTitle(`I deleted ${amount - 1} messages for ${message.author.username}`)
 .setDescription(`Username: ${message.author.username}\nId: ${message.author.id}\nMessages: ${amount}`);
 message.channel.send(nameEmbed);
 message.author.send(nameEmbed)
