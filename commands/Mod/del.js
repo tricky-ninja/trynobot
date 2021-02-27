@@ -9,11 +9,11 @@ module.exports = {
         const Discord = require('discord.js');
         const client = new Discord.Client();
         if(message.member.hasPermission("MANAGE_MESSAGES")) {
-            const amount = parseInt(args[0]);
+            const amount = parseInt(args[0] + 1);
     if (isNaN(amount)) {
         return message.reply('that doesn\'t seem to be a valid number.');
-    } else if (amount < 2 || amount > 100) {
-        return message.reply('you need to input a number between 2 and 100.');
+    } else if (amount < 2 || amount > 501) {
+        return message.reply('you need to input a number between 1 and 500.');
     }else{
         if (amount > 51){
             let filter = m => m.author.id === message.guild.ownerID
