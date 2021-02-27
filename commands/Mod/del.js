@@ -9,7 +9,7 @@ module.exports = {
         const Discord = require('discord.js');
         const client = new Discord.Client();
         if(message.member.hasPermission("MANAGE_MESSAGES")) {
-            const amount = parseInt(args[0] + 1);
+            const amount = parseInt(args[0]) + 1;
     if (isNaN(amount)) {
         return message.reply('that doesn\'t seem to be a valid number.');
     } else if (amount < 2 || amount > 501) {
