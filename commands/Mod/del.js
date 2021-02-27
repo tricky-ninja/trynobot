@@ -13,7 +13,7 @@ module.exports = {
     if (isNaN(amount)) {
         return message.reply('that doesn\'t seem to be a valid number.');
     } else if (amount <= 1 || amount > 101) {
-        return message.reply('you need to input a number between 1 and 500.');
+        return message.reply('you need to input a number between 1 and 99.');
     }else{
         if (amount > 51){
             let filter = m => m.author.id === message.guild.ownerID
@@ -34,7 +34,7 @@ module.exports = {
         const nameEmbed = new Discord.MessageEmbed()
 .setColor(6601338)
 .setTitle(`I deleted ${amount - 1} messages for ${message.author.username}`)
-.setDescription(`Username: ${message.author.username}\nId: ${message.author.id}\nMessages: ${amount}`);
+.setDescription(`Username: ${message.author.username}\nId: ${message.author.id}\nMessages: ${amount - 1}`);
 message.channel.send(nameEmbed);
 
 
@@ -58,7 +58,7 @@ message.channel.send(nameEmbed);
         const nameEmbed = new Discord.MessageEmbed()
 .setColor(6601338)
 .setTitle(`I deleted ${amount - 1} messages for ${message.author.username}`)
-.setDescription(`Username: ${message.author.username}\nId: ${message.author.id}\nMessages: ${amount}`);
+.setDescription(`Username: ${message.author.username}\nId: ${message.author.id}\nMessages: ${amount - 1}`);
 message.channel.send(nameEmbed);
 message.author.send(nameEmbed)
 message.guild.owner.send(nameEmbed)
