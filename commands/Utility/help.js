@@ -16,13 +16,14 @@ module.exports = {
 		if (!args.length) {
 
 
-           data.push("List of all commands\n\n")
+           data.push("Use prefix `&` with all commands\n")
+		   data.push(`You can send \`${prefix}help [command name]\` to get info on a specific command!\n\n`);
             
             for (let i = 0; i < commandFolders.length; i++) {
                 const commandFiles = fs.readdirSync(`./commands/${commandFolders[i]}`).filter(file => file.endsWith('.js'))
-                data.push(`\n**≫**  ${commandFolders[i]}\n`)
+                data.push(`\n❯   ${commandFolders[i]}\n`)
                 for (let j = 0; j < commandFiles.length; j++){
-                    data.push(`\`${commandFiles[j].slice(0, -3)}\`, `)
+                    data.push(`\`${commandFiles[j].slice(0, -3)}\` `)
                 }
                 data.push('\n')
                 
@@ -32,13 +33,14 @@ module.exports = {
             
 			
            
-			data.push(`\nYou can send \`${prefix}help [command name]\` to get info on a specific command!`);
+			
 	
 			let helpEmbed = new MessageEmbed()
       .setTitle(`${message.client.user.username} Help`)
       .setColor(emotecolor)
 	  .setDescription(`${data.join(' ')}`)
-        .setFooter('Use prefix & with all commands | Tryno-Bot')
+        .setTimestamp()
+		.setFooter(`Requested by ${message.author.username}`)
 	return message.channel.send(helpEmbed);
 			
 		}
