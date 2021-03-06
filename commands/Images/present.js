@@ -8,7 +8,7 @@ module.exports = {
         const Discord = require('discord.js');
         let text
         if (!args.length){
-            text = 'Savage is not gay'
+            text = 'Ik i and arcane r good couples Arcane loves me\n She is mine'
         }
         else{
             text = args.join(' ')
