@@ -13,11 +13,11 @@ module.exports={
         if (!message.mentions.users.size) {
             var wave1 = images.wave[Math.floor(Math.random() * images.wave.length)]
     
-    var waveMsg = ["says bye", "will be back", "says goodbye to"]
+    var waveMsg1 = ["says bye", "will be back", "says goodbye to"]
 
-    var waveN = Math.floor(Math.random() * waveMsg.length)
+    var waveN1 = Math.floor(Math.random() * waveMsg1.length)
     const loveEmbed1 = new Discord.MessageEmbed()
-            .setAuthor(`${message.author.username} ${waveMsg[waveN]}`)
+            .setAuthor(`${message.author.username} ${waveMsg1[waveN1]}`)
             .setColor(emotecolor)
             .setImage(wave1);
            
