@@ -12,7 +12,7 @@ module.exports={
         const util = require('util');
         const Discord = require('discord.js');
         if (!message.mentions.users.size) {
-            return message.channel.send(`You didn't provide any mention anyone, ${message.author}!`);
+            return message.channel.send(`You didn't mention anyone, ${message.author}!`);
         }
         const taggedUser = message.mentions.users.first();
         var kills =["https://media.tenor.com/images/f2815deb4991c4153a50801a7c95ac2c/tenor.gif","https://media.tenor.com/images/2c36ce3abcc2e2135f3a5575f0bcd882/tenor.gif",

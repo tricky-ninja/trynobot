@@ -13,7 +13,7 @@ module.exports={
         
         let auth=message.author
         if (!message.mentions.users.size) {
-          return message.channel.send(`You didn't provide any mention anyone, ${message.author}!`);
+          return message.channel.send(`You didn't mention anyone, ${message.author}!`);
       }
         const taggedUser = message.mentions.users.first();
         if (taggedUser.bot){

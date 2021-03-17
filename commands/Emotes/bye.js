@@ -1,9 +1,8 @@
 const {emotecolor} = require('../../style.json');
 module.exports={
-    name: 'wave',
+    name: 'bye',
     description: 'waves a user',
-    args: true,
-    usage: '<@username>',
+    aliases: ['tata','cya'],
     guildOnly: true,
 
 	
@@ -12,13 +11,24 @@ module.exports={
         const util = require('util');
         const Discord = require('discord.js');
         if (!message.mentions.users.size) {
-            return message.channel.send(`You didn't mention anyone, ${message.author}!`);
+            var wave = images.wave[Math.floor(Math.random() * images.wave.length)]
+    
+    var waveMsg = ["says bye", "will be back", "says goodbye to"]
+
+    var waveN = Math.floor(Math.random() * waveMsg.length)
+    const loveEmbed1 = new Discord.MessageEmbed()
+            .setAuthor(`${message.author.username} ${waveMsg[waveN]}`)
+            .setColor(emotecolor)
+            .setImage(wave);
+           
+            message.channel.send(loveEmbed); 
+            return message.channel.send(`${loveEmbed1}`);
         }
         const taggedUser = message.mentions.users.first();
     
     var wave = images.wave[Math.floor(Math.random() * images.wave.length)]
     
-    var waveMsg = ["says hi to", "is waving at", "says hello to"]
+    var waveMsg = ["says bye to", "is waving at", "says goodbye to"]
 
     var waveN = Math.floor(Math.random() * waveMsg.length)
     const loveEmbed = new Discord.MessageEmbed()
