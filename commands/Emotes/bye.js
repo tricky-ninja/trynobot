@@ -11,7 +11,7 @@ module.exports={
         const util = require('util');
         const Discord = require('discord.js');
         if (!message.mentions.users.size) {
-            var wave = images.wave[Math.floor(Math.random() * images.wave.length)]
+            var wave1 = images.wave[Math.floor(Math.random() * images.wave.length)]
     
     var waveMsg = ["says bye", "will be back", "says goodbye to"]
 
@@ -19,7 +19,7 @@ module.exports={
     const loveEmbed1 = new Discord.MessageEmbed()
             .setAuthor(`${message.author.username} ${waveMsg[waveN]}`)
             .setColor(emotecolor)
-            .setImage(wave);
+            .setImage(wave1);
            
     
             message.channel.send(`${loveEmbed1}`);
