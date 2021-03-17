@@ -22,7 +22,8 @@ module.exports={
             .setImage(wave);
            
     
-            return message.channel.send(`${loveEmbed1}`);
+            message.channel.send(`${loveEmbed1}`);
+            return 
         }
         const taggedUser = message.mentions.users.first();
     
