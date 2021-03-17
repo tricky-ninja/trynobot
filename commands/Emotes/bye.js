@@ -21,7 +21,7 @@ module.exports={
             .setColor(emotecolor)
             .setImage(wave);
            
-            message.channel.send(loveEmbed); 
+    
             return message.channel.send(`${loveEmbed1}`);
         }
         const taggedUser = message.mentions.users.first();
