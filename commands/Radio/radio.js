@@ -10,7 +10,7 @@ module.exports = {
         if (!message.member.voice.channel) return message.reply('You must join a vc to use this command!')
         let serchT
         if (!args.length){
-            serchT = 'cnn'
+            serchT = 'iloveradio'
         }
         else {
             serchT = args.join(' ')
