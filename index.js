@@ -17,6 +17,7 @@ const Canvas = require('canvas');
 const images = require('./files/images')
 var d = Math.random();
 const DIG = require("discord-image-generation");
+const radio = require('discord-radio-player')
 
 
 let sv
