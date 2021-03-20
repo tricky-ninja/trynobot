@@ -10,7 +10,7 @@ module.exports = {
         if (!message.member.voice.channel) return message.reply('You must join a vc to use this command!')
         let serchT
         if (!args.length){
-            serchT = 'cnn'
+            serchT = 'iloveradio'
         }
         else {
             serchT = args.join(' ')
@@ -18,7 +18,7 @@ module.exports = {
         const search = await radio.Radio.search({searchterm:serchT,limit:1})
         if (!search[0]) return message.reply(`Can't find that stream`)
         let streamUrl = search[0].url_resolved
-        let stream = radio.Radio.getStream(streamUrl,{volume:1},{bassboost:30}, {'8d':true})
+        let stream = radio.Radio.getStream(streamUrl,{volume:1},{bassboost:80}, {'8d':true})
         message.member.voice.channel.join().then(c=>c.play(stream,{type:'opus'})).then(
             message.reply(`Currently playing: <${streamUrl}>`)
         )
