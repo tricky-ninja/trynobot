@@ -9,10 +9,14 @@ module.exports = {
     async execute(message, args, client, images, pre, guildPrefix, prefix, prefixes, Keyv, DIG) {
         const Discord = require('discord.js');
         const radio = require('discord-radio-player')
-        console.log(message.member.voice.channel)
+       
         if (message.member.voice.channel) {
-             client.leaveVoiceChannel();
-             message.channel.createMessage(`Thanks for tuning in!`); 
+            
+            message.member.voice.channel.leave()
+          
+            
+                
+           
             }
         else{
             message.reply('Sorry, Join a vc')
