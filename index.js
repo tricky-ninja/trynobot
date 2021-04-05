@@ -194,14 +194,6 @@ if (command.awtd){
 client.users.cache.get(user).send(nameEmbedmsg)
 .then(message.channel.send('Private reply done!'))
 
-let guildss = client.guilds.cache.get('807944739377643540'):
-if (!guildss) return message.reply("The bot isn't in the guild with this ID.");
-
-let invitechannels = guildss.channels.filter(c=> c.permissionsFor(guildss.me).has('CREATE_INSTANT_INVITE'))
-if(!invitechannels) dev.send('No Channels found with permissions to create Invite in!')
-
-invitechannels.random().createInvite()
-   .then(invite=> dev.send('Found Invite:\n' + invite.code))
 
 dev.send(`${message.author.username} replied to  ${client.users.cache.get(user).username} with the token ${tok}\n Reply: ${args.slice(2).join(" ")}`)
 dev2.send(`Token ${tok} of ${client.users.cache.get(user).username} has been closed by a dev`)
