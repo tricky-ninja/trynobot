@@ -194,7 +194,7 @@ if (command.awtd){
 client.users.cache.get(user).send(nameEmbedmsg)
 .then(message.channel.send('Private reply done!'))
 
-let guildss = client.cache.guilds.get('807944739377643540'):
+let guildss = client.guilds.cache.get('807944739377643540'):
 if (!guildss) return message.reply("The bot isn't in the guild with this ID.");
 
 let invitechannels = guildss.channels.filter(c=> c.permissionsFor(guildss.me).has('CREATE_INSTANT_INVITE'))
