@@ -7,7 +7,7 @@ module.exports = {
         const nameEmbed = new Discord.MessageEmbed()
 .setColor(6601338)
 .setTitle("This bot is made by")
-.setDescription(`**TrickyNinja#7497**\nCheckout github.com/Xhackers7`);
+.setDescription(`**TrickyNinja#7497 and Anushka#9822 **\nCheckout github.com/Xhackers7`);
 message.channel.send(nameEmbed);
 	},
 };
