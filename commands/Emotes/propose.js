@@ -17,7 +17,7 @@ module.exports={
       }
         const taggedUser = message.mentions.users.first();
         if (taggedUser.bot){
-            return message.reply(`Why are you proposing ${taggedUser.username}. Pls let us live happily :triumph:`)
+            return message.reply(`Oh! So now you're proposing bots too \n How lonely are you, depressed human`)
         }
         let filter = m => m.author.id === taggedUser.id
         const loveEmbed = new Discord.MessageEmbed()
