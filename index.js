@@ -74,14 +74,11 @@ client.on('message', async message => {
 
 	const tuser = message.mentions.users.first();
 	const commandName = args.shift().toLowerCase();
-	const devonly = ['711074637689389127', '751736021661778004', '739502238032068659', '689845214273339589', '689418782934040592', '609476320266682547'];
-	const maindevs = ['711074637689389127', '751736021661778004']
+	const devonly = ['711074637689389127', '739502238032068659');
+	const maindevs = ['711074637689389127']
 	const dev = client.users.cache.get('711074637689389127');
-	const dev2 = client.users.cache.get('751736021661778004');
-	const dev3 = client.users.cache.get('689845214273339589');
-	const dev4 = client.users.cache.get('689418782934040592');
-	const dev5 = client.users.cache.get('739502238032068659');
-        const dev6 = client.users.cache.get('609476320266682547');
+	const dev2 = client.users.cache.get();
+	
 
 const command = client.commands.get(commandName)
 	|| client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
@@ -145,10 +142,6 @@ if (command.args && !args.length) {
 	.setDescription(`Username: ${message.author.username}\nId: ${message.author.id}\nServer: ${message.guild}\nFeedback: ${args.join(" ")}\nToken: ${tick}`);
 			dev.send(nameEmbed);
 			dev2.send(nameEmbed);
-			dev3.send(nameEmbed);
-			dev4.send(nameEmbed);
-			dev5.send(nameEmbed);
-                        dev6.send(nameEmbed);
 			message.reply('Successfully sent your feedback to my developers').then(sentMessage => {
 				sentMessage.react('👍');
 			
@@ -168,19 +161,10 @@ client.users.cache.get(user).send(nameEmbed)
 .then(message.channel.send('Done!'))
 dev.send(`${message.author.username} replied to ${client.users.cache.get(user).username} with the token ${tok}\n Reply: ${args.slice(2).join(' ')}`)
 dev2.send(`${message.author.username} replied to ${client.users.cache.get(user).username} with the token ${tok}\n Reply: ${args.slice(2).join(' ')}`)
-dev3.send(`${message.author.username} replied to ${client.users.cache.get(user).username} with the token ${tok}\n Reply: ${args.slice(2).join(' ')}`)
-dev4.send(`${message.author.username} replied to ${client.users.cache.get(user).username} with the token ${tok}\n Reply: ${args.slice(2).join(' ')}`)
-dev5.send(`${message.author.username} replied to ${client.users.cache.get(user).username} with the token ${tok}\n Reply: ${args.slice(2).join(' ')}`)
-dev6.send(`${message.author.username} replied to ${client.users.cache.get(user).username} with the token ${tok}\n Reply: ${args.slice(2).join(' ')}`)
- 
 }
 if (command.devc){
 			dev.send(`${message.author.username}: ${args.join(" ")}`);
 			dev2.send(`${message.author.username}: ${args.join(" ")}`);
-			dev3.send(`${message.author.username}: ${args.join(" ")}`);
-			dev4.send(`${message.author.username}: ${args.join(" ")}`);
-			dev5.send(`${message.author.username}: ${args.join(" ")}`);
-                        dev6.send(`${message.author.username}: ${args.join(" ")}`);   
 			
 }
 if (command.awtd){
@@ -196,11 +180,6 @@ client.users.cache.get(user).send(nameEmbedmsg)
 
 
 dev.send(`${message.author.username} replied to  ${client.users.cache.get(user).username} with the token ${tok}\n Reply: ${args.slice(2).join(" ")}`)
-dev2.send(`Token ${tok} of ${client.users.cache.get(user).username} has been closed by a dev`)
-dev3.send(`Token ${tok} of ${client.users.cache.get(user).username} has been closed by a dev`)
-dev4.send(`Token ${tok} of ${client.users.cache.get(user).username} has been closed by a dev`)
-dev5.send(`Token ${tok} of ${client.users.cache.get(user).username} has been closed by a dev`)
-dev6.send(`Token ${tok} of ${client.users.cache.get(user).username} has been closed by a dev`)
 }
 		const now = Date.now();
 		const timestamps = cooldowns.get(command.name);
