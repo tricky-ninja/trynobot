@@ -33,17 +33,7 @@ for (const folder of commandFolders) {
 const cooldowns = new Discord.Collection()
 
 client.once('ready', () => {
-        const statusList = [
-        'Wishing you a Happy republic day',
-        '&help',
-        'Love India'
-          ]
-      
-      setInterval(function () {
-          let changingStatus = statusList[Math.floor(Math.random() * statusList.length)];
-          
-      
-        }, 10000)
+        
 		client.user.setActivity('&help | Tryno Bot', {type: 'LISTENING' });
 	console.log(`Ready to serve ${client.guilds.cache.size} servers`);
 });
